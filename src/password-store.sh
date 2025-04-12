@@ -40,6 +40,7 @@ git_add_file() {
 }
 git_commit() {
 	[[ -n $INNER_GIT_DIR ]] || return
+	echo "Committing $INNER_GIT_DIR: $1" 1>&2
 	git -C "$INNER_GIT_DIR" commit -m "$1"
 }
 yesno() {
